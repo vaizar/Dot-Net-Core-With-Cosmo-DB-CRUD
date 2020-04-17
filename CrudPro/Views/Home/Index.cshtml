@@ -1,0 +1,38 @@
+﻿@model List<User>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@if (Model != null)
+{
+    <table>
+        <thead>
+            <tr>
+                @*<td>Id</td>*@
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Age</td>
+                <td>Address</td>
+                <td>Zip Code</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @*<td>@item.Id</td>*@
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Age</td>
+                    <td>@item.Address</td>
+                    <td>@item.ZipCode</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
